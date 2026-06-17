@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: "realguard-api"
+    metrics_path: "/metrics"
+    static_configs:
+      # In docker-compose, 'api' is the service name, but if we run it
+      # locally on host, we might need host.docker.internal.
+      # Since we'll have it all in docker, 'api:8000' works perfectly.
+      # If running API locally (uvicorn), we scrape host.docker.internal:8000
+      - targets: ["api:8000", "host.docker.internal:8000"]

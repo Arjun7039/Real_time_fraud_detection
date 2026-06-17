@@ -1,0 +1,64 @@
+# ============================================================
+# RealGuard — .gitignore
+# ============================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data files (too large for git)
+data/raw/*.csv
+data/processed/*.parquet
+*.csv
+
+# Model artifacts
+mlflow/
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.npy
+
+# Optuna studies
+optuna_studies/*.db
+
+# Monitoring reports
+monitoring/reports/*.html
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Docker volumes
+redis_data/
+mlflow_data/
+prometheus_data/
+grafana_data/
+
+# Environment variables
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
